@@ -7,6 +7,7 @@ import org.springframework.util.MultiValueMap;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MovieService {   
@@ -18,7 +19,7 @@ public class MovieService {
     }
 
 
-    public java.util.Optional<Movie> singMovie(ObjectId id) {
-        return movieRepository.findById(id);
+    public Optional<Movie> singleMovie(String imdbId){
+        return movieRepository.findMovieByImdbId(imdbId);
     }
 }
